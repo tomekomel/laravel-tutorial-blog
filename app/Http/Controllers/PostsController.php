@@ -23,14 +23,19 @@ class PostsController extends Controller
     }
 
     public function store()
-	{
-		$post = new Post;
+    {
+        /*$post = new Post;
 
-		$post->title = request('title');
-		$post->body = request('body');
+        $post->title = request('title');
+        $post->body = request('body');
 
-		$post->save();
+        $post->save();*/
 
-		return redirect('/posts');
-	}
+        Post::create([
+            'title' => request('title'),
+            'body' => request('body'),
+        ]);
+
+        return redirect('/posts');
+    }
 }
