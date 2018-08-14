@@ -1,15 +1,12 @@
 @extends ('layouts.master')
 
 @section ('content')
-    <div class="col-sm-8 blog-main">
-        <h1>Register</h1>
+    <div class="col-md-8">
+        <h1>Login</h1>
 
-        <form method="POST" action="/register">
+        <form method="POST" action="/login">
             {{ csrf_field() }}
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" name="name" id="name" required>
-            </div>
+
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" name="email" id="email" required>
@@ -19,14 +16,10 @@
                 <input type="password" class="form-control" name="password" id="password" required>
             </div>
             <div class="form-group">
-                <label for="password_confirmation">Password Confirmation:</label>
-                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" class="btn btn-primary">Login</button>
             </div>
 
-            @include('layouts.errors')
+            @include ('layouts.errors')
         </form>
     </div>
 @endsection
