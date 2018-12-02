@@ -24,7 +24,7 @@ class PostsController extends Controller
         $posts = $posts->get();
         //$posts = $posts->all();
 
-        return view('posts.index', compact('posts', 'archives'));
+        return view('posts.index', compact('posts'));
     }
 
     public function show(Post $post)
